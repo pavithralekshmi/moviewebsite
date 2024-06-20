@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Welcome to the Movie Website</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/styles.css' %}">
+<ul>
+    {% for movie in movies %}
+        <li><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
